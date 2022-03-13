@@ -1,0 +1,77 @@
+name: Bug report / 故障反馈
+description: Report code flaws and server failures / 反馈代码缺陷和服务故障
+title: "[故障反馈] "
+labels:
+- bug
+- to-be-confirmed
+
+assignees:
+- arnie97
+
+body:
+- type: markdown
+  id: head
+  attributes:
+    value: |
+      欢迎向 mirrors.tk 汇报故障，请按以下模板填写。
+
+- type: checkboxes
+  id: prerequisites
+  attributes:
+    label: 先决条件
+    options:
+    - label: |
+        我已搜索确认，同类问题未在[其他 issues](https://github.com/search?q=org%3Amirrors-tk&type=issues) 中提出过（包括 mirrors-tk 组织内其他仓库）。
+      required: true
+
+- type: textarea
+  id: repositories
+  attributes:
+    label: 镜像名称
+    placeholder: |
+      受此故障影响的镜像。
+      如果认为故障与具体镜像无关，请填写「无关」
+  validations:
+    required: true
+
+- type: textarea
+  id: environment
+  attributes:
+    label: 环境信息
+    placeholder: |
+      请说明问题发生时间和触发问题的软件版本
+  validations:
+    required: true
+
+- type: textarea
+  id: reproduction
+  attributes:
+    label: 复现路径
+    placeholder: |
+      请详细说明此问题的最简复现路径
+  validations:
+    required: true
+
+- type: textarea
+  id: actual
+  attributes:
+    label: 问题现象
+    placeholder: |
+      按上述路径操作后，看到的不符合您预期的现象是？
+  validations:
+    required: true
+
+- type: textarea
+  id: expected
+  attributes:
+    label: 预期现象
+    placeholder: |
+      问题修复后，同一操作应该给出什么结果？
+      如果显而易见，可省略不填
+
+- type: textarea
+  id: notes
+  attributes:
+    label: 备注
+    placeholder: |
+      其他有助于定位问题的信息，如错误日志

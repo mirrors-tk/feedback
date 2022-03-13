@@ -1,0 +1,31 @@
+name: Feature request / 功能提议
+description: Suggest feature improvements / 提出功能改进意见
+title: "[功能提议] "
+labels:
+- enhancement
+
+assignees:
+- arnie97
+
+body:
+- type: markdown
+  id: head
+  attributes:
+    value: |
+      欢迎向 mirrors.tk 提议新功能，请按以下模板填写。
+
+- type: checkboxes
+  id: prerequisites
+  attributes:
+    label: 先决条件
+    options:
+    - label: |
+        我已搜索确认，这个需求未在[其他 issues](https://github.com/search?q=org%3Amirrors-tk&type=issues) 中提出过（包括 mirrors-tk 组织内其他仓库）。
+      required: true
+
+- type: textarea
+  id: details
+  attributes:
+    label: 需求说明
+  validations:
+    required: true

@@ -1,0 +1,94 @@
+name: Mirror request / 镜像请求
+description: Suggest setting up new mirrors / 建议设立新的镜像
+title: "[镜像请求] "
+labels:
+- new-mirror
+
+assignees:
+- arnie97
+
+body:
+- type: markdown
+  id: head
+  attributes:
+    value: |
+      欢迎向 mirrors.tk 提交新镜像请求，请按以下模板填写。
+
+- type: checkboxes
+  id: prerequisites
+  attributes:
+    label: 先决条件
+    options:
+    - label: |
+        我已搜索确认，这个镜像未在[其他 issues](https://github.com/mirrors-tk/feedback/issues) 中请求过。
+      required: true
+    - label: |
+        我确认上游的版权许可证允许二次分发（Redistribution）。
+      required: true
+
+- type: textarea
+  id: license
+  attributes:
+    label: 版权许可证
+    placeholder: |
+      请填写上游项目的版权许可证（LICENSE）类型。
+      如果项目使用了非常规的自拟许可证，请附上版权许可的 URL。
+  validations:
+    required: true
+
+- type: textarea
+  id: intro
+  attributes:
+    label: 项目主页与简介
+    placeholder: |
+      请简要阐述该软件的用途，主页地址，项目建立时间，上次更新时间等，
+      以便说明建立其镜像的必要性。
+  validations:
+    required: true
+
+- type: textarea
+  id: peers
+  attributes:
+    label: 其他镜像站收录情况
+    placeholder: |
+      请说明国内外镜像站对该软件项目的收录情况，亦可附上在其他镜像站请求镜像时的讨论链接。
+      本站优先收录中国大陆无镜像源可用的软件项目，对于大陆其他镜像站已录的项目通常只做重定向而不复制。
+  validations:
+    required: true
+
+- type: markdown
+  id: peers-help
+  attributes:
+    value: |
+      [可参考此表查询中国大陆境内的主要镜像源](https://gitee.com/gsls200808/chinese-opensource-mirror-site/blob/master/README.md)。
+      亦可尝试在软件项目官方下载页上查找该项目在全球的镜像情况。
+
+- type: textarea
+  id: upstream
+  attributes:
+    label: 上游地址与镜像方法
+    placeholder: |
+      请给出上游要同步内容本身的地址，而不是项目主页。
+      本站支持 rsync，s3，yum，apt，git 仓库及 GitHub Release 的同步。
+      对于网页允许目录浏览且文件不多的情况，亦支持 http 同步。
+      如果上游或社区提供了针对该项目的专用同步工具，请予说明。
+  validations:
+    required: true
+
+- type: textarea
+  id: size
+  attributes:
+    label: 镜像大小与文件数量
+    placeholder: |
+      如果项目占用空间大、文件数量多，而利用率较低，本站将不予收录。
+  validations:
+    required: false
+
+- type: textarea
+  id: notes
+  attributes:
+    label: 备注
+    placeholder: |
+      以上问题之外的补充说明
+  validations:
+    required: false

@@ -20,7 +20,7 @@ body:
     label: 先决条件
     options:
     - label: |
-        我已搜索确认，这个镜像未在[其他 issues](https://github.com/mirrors-tk/feedback/issues) 中请求过。
+        我已搜索确认，这个镜像未在[其他 issues](https://github.com/mirrors-tk/feedback/issues?q=is%3Aissue) 中请求过。
       required: true
     - label: |
         我确认上游的版权许可证允许二次分发（Redistribution）。
